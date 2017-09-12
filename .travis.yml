@@ -8,7 +8,7 @@ env:
 
 #Compile
 before_script:
-    - ./travis/compile.sh
+    - ./ci/compile.sh
 
 # Run PHPs run-tests.php 
 script: make test
