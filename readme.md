@@ -1,5 +1,7 @@
 Fval
 =====================
+[![Build Status](https://travis-ci.org/zsxsoft/fval.svg?branch=master)](https://travis-ci.org/zsxsoft/fval)
+[![AppVeyor Build Status](https://ci.appveyor.com/project/zsxsoft/fval/branch/master?svg=true)](https://ci.appveyor.com/project/zsxsoft/fval/branch/master)
 
 Fval(say F-word to eval) extension used to disable unsafe functions/eval with E_FATAL.
 
@@ -13,9 +15,18 @@ PHP 7+
 1. Disable unsafe functions: ``passthru`` ``exec`` ``system`` ``shell_exec`` ``proc_open`` ``popen``
 1. Throw error when ``include`` or ``require`` a file generate by PHP.
 
-## Install
+## Build
+### *nix
+```bash
+phpize
+./configure
+make
+make install
+```
 
-todo...
+### Windows
+
+If you're using PHP 7.1 + Non Thread Safe + x64, run ``ci\appveyor.bat`` with Administrator, it will auto compile to ``php-sdk\phpdev\vc14\x64\php-7.1.8\x64\Release\php-fval.dll``. Otherwise, follow https://github.com/OSTC/php-sdk-binary-tools/ and configure with ``--enable-fval=shared``.
 
 ## Configure
 ```ini
@@ -30,7 +41,6 @@ fval.error_level => 512
 
 ## TODO
 1. [ ] Use hook or ``ptrace`` to record all file writing.
-1. [ ] TravisCI and AppVeyor configure.
 1. [ ] ``.phpt`` tests.
 1. [ ] Dynamic calls detection.
 

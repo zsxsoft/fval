@@ -26,7 +26,7 @@
 #include "zend_execute.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
-#include "php_fval.h"
+#include "../php_fval.h"
 
 ZEND_DECLARE_MODULE_GLOBALS(fval)
 
@@ -270,8 +270,9 @@ static void php_fval_fcall_check(zend_execute_data *ex, const zend_op *opline, z
 						fval_register_wrote_files(fp);
 					}
 				}
-			} else if (zend_string_equals_literal(fname, "move_uploaded_file") ||
-								 zend_string_equals_literal(fname, "copy")
+			} else if (
+				zend_string_equals_literal(fname, "move_uploaded_file") ||
+				zend_string_equals_literal(fname, "copy")
 				) {
 				if (FVAL_G(disable_eval)) {
 					zval *fp = ZEND_CALL_ARG(ex, 2);
@@ -292,9 +293,9 @@ static void php_fval_fcall_check(zend_execute_data *ex, const zend_op *opline, z
 						size_t mode_length = Z_STRLEN_P(mode_zval);
 						for (int i = 0; i < mode_length; i++) {
 							if ((mode[i] == 'w' || mode[i] == 'W') ||
-									(mode[i] == 'a' || mode[i] == 'A') ||
-									(mode[i] == 'c' || mode[i] == 'C') ||
-									(mode[i] == 'x' || mode[i] == 'X')) {
+								(mode[i] == 'a' || mode[i] == 'A') ||
+								(mode[i] == 'c' || mode[i] == 'C') ||
+								(mode[i] == 'x' || mode[i] == 'X')) {
 								fval_register_wrote_files(fp);
 								break;
 							}
@@ -409,12 +410,6 @@ PHP_MINFO_FUNCTION(fval)
 }
 /* }}} */
 
-
-PHPAPI php_stream *fval_php_stream_open_wrapper_ex(const char *path, const char *mode, int options,
-	zend_string **opened_path, php_stream_context *context STREAMS_DC) {
-		printf("%s\n", (*opened_path) ->val);
-		return _php_stream_open_wrapper_ex(path, mode, options, opened_path, context STREAMS_CC);
-	}
 /*
  * Local variables:
  * tab-width: 4

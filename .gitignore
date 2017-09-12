@@ -1,5 +1,21 @@
 .vscode
 php-sdk
+Makefile*
+config*
+*.m4
+!config.m4
+!config.w32
+build
+install-sh
+*cache
+libtool
+ltmain.sh
+missing
+mkinstalldirs
+run-tests.php
+.deps
+.libs
+
 
 # Prerequisites
 *.d

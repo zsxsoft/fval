@@ -4,6 +4,6 @@
 ARG_ENABLE("fval", "enable fval support", "no");
 
 if (PHP_FVAL != "no") {
-	EXTENSION("fval", "fval.c");
+	EXTENSION("fval", "src\\fval.c");
 }
 

@@ -36,7 +36,7 @@ before_build:
   - if %platform%==Win64 set vcplatform=x64
 
 build_script:
-  - CALL appveyor.bat
+  - CALL ci\appveyor.bat
 
 skip_commits:
   message: /.*\[skip appveyor\].*/
