@@ -1,7 +1,7 @@
 Fval
 =====================
 [![Build Status](https://travis-ci.org/zsxsoft/fval.svg?branch=master)](https://travis-ci.org/zsxsoft/fval)
-[![AppVeyor Build Status](https://ci.appveyor.com/project/zsxsoft/fval/branch/master?svg=true)](https://ci.appveyor.com/project/zsxsoft/fval/branch/master)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/zsxsoft/fval)](https://ci.appveyor.com/project/zsxsoft/fval/branch/master)
 
 Fval(say F-word to eval) extension used to disable unsafe functions/eval with E_FATAL.
 
